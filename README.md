@@ -46,6 +46,8 @@ Font directories diff of FFI...Parser:
 - [= ] /nix/store/fqinqima2iw0nkl9zk36v5dygbg57669-liberation-fonts-2.1.0
   [  ] /nix/store/f29d0sxg4svwpvd1pplg0fq7g4qdvrmb-unifont-15.0.01
 - [= ] /nix/store/afyid3i7s7jq2gk2l0699znlvhz1csk3-noto-fonts-emoji-2.038
+- [ x] /nix/store/kjz70chwjvdcsmmhls4pfx1j6s3rccxb-home-manager-path/lib/X11/fonts
+- [  ] /nix/store/kjz70chwjvdcsmmhls4pfx1j6s3rccxb-home-manager-path/share/fonts
   [  ] /home/kyaru/.local/share/fonts
 - [ x] /nix/store/zbr5i1jzfaj29v62g9r9xlibhv8295r6-patchelf-0.15.0/share/fonts
 - [ x] /nix/store/zd69n70lka5z4b13dgksjpm85sn00nma-konsole-22.12.3/share/fonts
@@ -161,6 +163,7 @@ Font directories diff of FFI...Parser:
 - [ x] /nix/store/xnjiqpf036dcs660n8a2qrxldnq7x4s9-desktops/share/fonts
 - [ x] /etc/profiles/per-user/kyaru/share/fonts
 - [ x] /run/current-system/sw/share/fonts
+- [ x] /nix/store/3lbhxid1pzfw173p4y7hy2fcg9ifkw1v-vscode-1.76.2/lib/vscode/resources/app/out/vs/workbench/contrib/xdg_data/fonts
   [  ] /nix/store/x9cii4yd4c5b3p9k187aysmv2x5dqrlg-dejavu-fonts-minimal-2.37
   [ x] /home/kyaru/.nix-profile/lib/X11/fonts
   [  ] /home/kyaru/.nix-profile/share/fonts
