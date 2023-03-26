@@ -16,7 +16,7 @@ fn main() {
     let ffi_dirs = ffi_dirs.join("\n");
     let parser_dirs = parser_dirs.join("\n");
 
-    println!(r#"Font directorys diff of FFI...Parser:
+    println!(r#"Font directories diff of FFI...Parser:
 
 [+] Insert [-] Delete
 [=] Both has but order differs

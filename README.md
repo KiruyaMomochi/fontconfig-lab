@@ -22,7 +22,7 @@ It seems that their results are almost same, although
 Here is the result of `cargo run` on my NixOS:
 
 ```
-Font directorys diff of FFI...Parser:
+Font directories diff of FFI...Parser:
 
 [+] Insert [-] Delete
 [=] Both has but order differs
