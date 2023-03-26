@@ -12,7 +12,11 @@
         naersk-lib = pkgs.callPackage naersk { };
       in
       {
-        defaultPackage = naersk-lib.buildPackage ./.;
+        defaultPackage = naersk-lib.buildPackage { 
+          src = ./.;
+          nativeBuildInputs = [ pkgs.pkg-config ];
+          buildInputs = [ pkgs.fontconfig ];
+        };
         devShell = with pkgs; mkShell {
           buildInputs = [ cargo rustc rustfmt pre-commit rustPackages.clippy pkg-config fontconfig ];
           RUST_SRC_PATH = rustPlatform.rustLibSrc;
