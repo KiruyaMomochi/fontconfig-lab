@@ -15,7 +15,11 @@ Things not covered:
 
 ## Result
 
-Result of `cargo run` on my NixOS:
+It seems that their results are almost same, although
+- the order may differ, and
+- `libfontconfig` also considers fonts under `$XDG_DATA_DIRS/share/fonts`. However, none of them exists on my OS.
+
+Here is the result of `cargo run` on my NixOS:
 
 ```
 Font directorys diff of FFI...Parser:
