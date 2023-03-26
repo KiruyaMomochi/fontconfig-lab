@@ -15,8 +15,10 @@ Things not covered:
 
 ## Result
 
-`+`: Found by Parser but not FFI.
-`x`: Found by FFI but not parser. However, these files are not actually exists.
+Result of `cargo run` on my NixOS.
+
+- `+`: Found by Parser but not FFI.
+- `x`: Found by FFI but not parser. However, these files are not actually exists.
 
 ```diff
 + /nix/store/3cg59xc331qda1f7ganxsc7agfp5xcbm-noto-fonts-20201206-phase3
