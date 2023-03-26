@@ -7,21 +7,37 @@ fn main() {
     let ffi_dirs = ffi::dirs();
     // Parse the fonts.conf files directly.
     let parser_dirs = with_parser::dirs();
+    let union_hash: std::collections::HashSet<String> = ffi_dirs
+        .iter()
+        .filter(|x| parser_dirs.contains(x))
+        .cloned()
+        .collect();
 
     let ffi_dirs = ffi_dirs.join("\n");
     let parser_dirs = parser_dirs.join("\n");
 
-    println!("Comparing FFI...Parser:");
+    println!(r#"Font directorys diff of FFI...Parser:
+
+[+] Insert [-] Delete
+[=] Both has but order differs
+[x] Not exist in filesystem
+"#);
 
     let diff = TextDiff::from_lines(&ffi_dirs, &parser_dirs);
+
     for change in diff.iter_all_changes() {
+        let union = union_hash.contains(change.value().trim());
+        let exist = Path::new(&change.value().trim()).exists();
         let sign = match change.tag() {
-            ChangeTag::Delete if Path::new(&change.to_string()).exists() => "-",
-            ChangeTag::Delete => "x",
-            ChangeTag::Insert => "+",
-            ChangeTag::Equal => " ",
+            ChangeTag::Delete => '-',
+            ChangeTag::Insert => '+',
+            ChangeTag::Equal => ' ',
         };
-        print!("{} {}", sign, change);
+
+        let exist = if exist { ' ' } else { 'x' };
+        let union = if !union || sign == ' ' { ' ' } else { '=' };
+
+        print!("{} [{}{}] {}", sign, union, exist, change);
     }
 }
 
